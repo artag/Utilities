@@ -11,7 +11,7 @@ namespace Dcp
     {
         private readonly IErrorHandler<string> _errorHandler;
         private readonly IFileHandler<Result<ulong>> _fileHandler;
-        private readonly IResultHandler<ConsumerResult> _resultFileWriter;
+        private readonly IResultHandler<ConsumerResult> _resultHandler;
         private readonly IPCQueue<string> _pcQueue;
 
         private bool _isStopped = false;
@@ -35,7 +35,7 @@ namespace Dcp
             _fileHandler = fileHandler
                            ?? throw new ArgumentNullException(nameof(fileHandler));
 
-            _resultFileWriter = resultHandler
+            _resultHandler = resultHandler
                                 ?? throw new ArgumentNullException(nameof(resultHandler));
 
             _pcQueue = pcQueue
@@ -78,7 +78,7 @@ namespace Dcp
         {
             var fileName = Path.GetFileName(fullPath);
             var result = new ConsumerResult(fileName, numberOfCharacters);
-            _resultFileWriter.HandleResult(result);
+            _resultHandler.HandleResult(result);
         }
     }
 }
