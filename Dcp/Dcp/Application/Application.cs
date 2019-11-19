@@ -10,7 +10,7 @@ namespace Dcp
     internal class Application : IApplication
     {
         private readonly Settings _settings;
-        private readonly IProducer<string> _producer;
+        private readonly IPCController<string> _pcController;
 
         private readonly TimeSpan _delayTime;
 
@@ -18,14 +18,14 @@ namespace Dcp
         /// Инициализирует новый экземпляр класса <see cref="Application"/>.
         /// </summary>
         /// <param name="settings">Настройки приложения.</param>
-        /// <param name="producer">Поставщик заданий.</param>
-        public Application(Settings settings, IProducer<string> producer)
+        /// <param name="pcController">Контроллер Producer-Consumer.</param>
+        public Application(Settings settings, IPCController<string> pcController)
         {
             _settings = settings
                         ?? throw new ArgumentNullException(nameof(settings));
 
-            _producer = producer
-                      ?? throw new ArgumentNullException(nameof(producer));
+            _pcController = pcController
+                            ?? throw new ArgumentNullException(nameof(pcController));
 
             _delayTime = TimeSpan.FromSeconds(_settings.DelayTimeInSec);
         }
@@ -58,17 +58,17 @@ namespace Dcp
         public void Stop()
         {
             Console.WriteLine("Waiting for all tasks to complete.");
-            _producer.Stop();
+            _pcController.Stop();
         }
 
         private async void OnCreated(object source, FileSystemEventArgs args)
         {
             var fullPath = args.FullPath;
 
-            // Задержка для передачи Producer пути к обрабатываемому файлу введена для
-            // предотвращения появления ошибки доступа к файлу, из-за его использования
-            // другим процессом.
-            await ActionInvoker.ExecuteWithDelay(() => _producer.Create(fullPath), _delayTime);
+            // Задержка для передачи Producer-Consumer Controller пути к обрабатываемому файлу
+            // введена для предотвращения появления ошибки доступа к файлу,
+            // из-за его использования другим процессом.
+            await ActionInvoker.ExecuteWithDelay(() => _pcController.Add(fullPath), _delayTime);
         }
     }
 }
