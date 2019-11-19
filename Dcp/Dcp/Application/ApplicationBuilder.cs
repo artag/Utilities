@@ -38,15 +38,15 @@ namespace Dcp
 
             services.AddSingleton<Settings>(settings.Value);
 
-            var maxNumberOfParallelTasks = settings.Value.MaxNumberOfParallelTasks;
-            services.AddSingleton<IPCQueue, PCQueue>(s => new PCQueue(maxNumberOfParallelTasks));
+            services.AddSingleton<IConsumer, Consumer>();
+            services.AddSingleton<IPCQueue<string>, PCQueue<string>>();
+            services.AddSingleton<IProducer<string>, Producer>();
+            services.AddSingleton<IPCController<string>, PCController>();
 
             services.AddSingleton<IApplication, Application>();
-            services.AddSingleton<IConsumer<string>, Consumer>();
             services.AddSingleton<IErrorHandler<string>, ConsoleLog>();
             services.AddSingleton<IFileHandler<Result<ulong>>, FileLettersCounter>();
             services.AddSingleton<IResultHandler<ConsumerResult>, ResultFileWriter>();
-            services.AddSingleton<IProducer<string>, Producer>();
 
             return Result<IServiceProvider>.Ok(services.BuildServiceProvider());
         }
