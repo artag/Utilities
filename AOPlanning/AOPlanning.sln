@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AOPlan", "AOPlan\AOPlan.csproj", "{41F98874-A22F-4185-91B5-07055A370AC7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{4D761B14-F135-4C72-B706-48B82763C88F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreTest", "CoreTest\CoreTest.csproj", "{31B009A1-D71D-4C25-9B74-5CA76544A05D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{EF8A61A5-BE51-4277-A706-027792A94542}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operations", "Operations\Operations.csproj", "{D8E46043-DF14-41CC-BEBA-CD8F624E55BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{EBC5D7CF-24AC-4917-88B1-ED20A72EC152}"
+	ProjectSection(SolutionItems) = preProject
+		Config\days_configs.txt = Config\days_configs.txt
+		Config\no_working.json = Config\no_working.json
+		Config\tasks1.json = Config\tasks1.json
+		Config\tasks_configs1.txt = Config\tasks_configs1.txt
+		Config\three_meetings.json = Config\three_meetings.json
+		Config\three_meetings_short_week.json = Config\three_meetings_short_week.json
+		Config\two_meetings.json = Config\two_meetings.json
+		Config\two_meetings_short_week.json = Config\two_meetings_short_week.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41F98874-A22F-4185-91B5-07055A370AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41F98874-A22F-4185-91B5-07055A370AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41F98874-A22F-4185-91B5-07055A370AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41F98874-A22F-4185-91B5-07055A370AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D761B14-F135-4C72-B706-48B82763C88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D761B14-F135-4C72-B706-48B82763C88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D761B14-F135-4C72-B706-48B82763C88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D761B14-F135-4C72-B706-48B82763C88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B009A1-D71D-4C25-9B74-5CA76544A05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B009A1-D71D-4C25-9B74-5CA76544A05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B009A1-D71D-4C25-9B74-5CA76544A05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B009A1-D71D-4C25-9B74-5CA76544A05D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8A61A5-BE51-4277-A706-027792A94542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8A61A5-BE51-4277-A706-027792A94542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8A61A5-BE51-4277-A706-027792A94542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8A61A5-BE51-4277-A706-027792A94542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8E46043-DF14-41CC-BEBA-CD8F624E55BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E46043-DF14-41CC-BEBA-CD8F624E55BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E46043-DF14-41CC-BEBA-CD8F624E55BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E46043-DF14-41CC-BEBA-CD8F624E55BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48F734DB-3816-46C6-9FAE-57CCCEC9DFE7}
+	EndGlobalSection
+EndGlobal

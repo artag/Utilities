@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AOPlan": {
+      "commandName": "Project",
+      "commandLineArgs": "days_configs.txt tasks_configs.txt"
+    }
+  }
+}
